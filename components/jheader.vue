@@ -2,44 +2,38 @@
   <div>
     <header>
       <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light">
-          <a class="navbar-brand" href="/"
-            ><img src="pictures/logo2.png" width="155"
-          /></a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
+        <div>
+          <b-navbar toggleable="lg">
+            <b-navbar-brand href="#"
+              ><nuxt-link to="/"
+                ><img src="/pictures/logo2.png" width="155" /></nuxt-link
+            ></b-navbar-brand>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="/">主頁</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/property">搜尋租盤</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/blog">網誌</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/faq">常見問題</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/contact">聯絡我們</a>
-              </li>
-            </ul>
-            <div class="form-inline my-2 my-lg-0">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link" href="faq.html"
+            <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
+            <b-collapse id="nav-collapse" is-nav>
+              <b-navbar-nav>
+                <b-nav-item><nuxt-link to="/">Home</nuxt-link></b-nav-item>
+                <b-nav-item
+                  ><nuxt-link to="/tutors">Search</nuxt-link></b-nav-item
+                >
+                <b-nav-item><nuxt-link to="/blog">Blog</nuxt-link></b-nav-item>
+                <b-nav-item><nuxt-link to="/faq">FAQ</nuxt-link></b-nav-item>
+                <b-nav-item
+                  ><nuxt-link to="/contact">Contact Us</nuxt-link></b-nav-item
+                >
+              </b-navbar-nav>
+
+              <!-- Right aligned nav items -->
+              <b-navbar-nav class="ml-auto">
+                <b-nav-item-dropdown right class="mt8">
+                  <!-- Using 'button-content' slot -->
+                  <template v-slot:button-content> My Account</template>
+                  <b-dropdown-item href="#">My Account</b-dropdown-item>
+                  <b-dropdown-item href="#">Logout</b-dropdown-item>
+                </b-nav-item-dropdown>
+                <b-nav-item class="mt8"
+                  ><nuxt-link to="/"
                     ><svg
                       class="someright"
                       width="24"
@@ -52,16 +46,18 @@
                         d="M13.033 2v-2l10 3v18l-10 3v-2h-9v-7h1v6h8v-18h-8v7h-1v-8h9zm1 20.656l8-2.4v-16.512l-8-2.4v21.312zm-3.947-10.656l-3.293-3.293.707-.707 4.5 4.5-4.5 4.5-.707-.707 3.293-3.293h-9.053v-1h9.053z"
                       />
                     </svg>
-                    登入</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="btn btnnew" href="">免費放租</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+                    Login</nuxt-link
+                  ></b-nav-item
+                >
+                <b-nav-item
+                  ><nuxt-link class="btn btnnew" to="/"
+                    >Register</nuxt-link
+                  ></b-nav-item
+                >
+              </b-navbar-nav>
+            </b-collapse>
+          </b-navbar>
+        </div>
       </div>
     </header>
   </div>

@@ -1,6 +1,8 @@
 {
-  "name": "comp3421-project",
+  "name": "threezero",
   "version": "1.0.0",
+  "description": "My remarkable Nuxt.js project",
+  "author": "",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -9,11 +11,10 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "core-js": "^3.25.3",
-    "nuxt": "^2.15.8",
-    "vue": "^2.7.10",
-    "vue-server-renderer": "^2.7.10",
-    "vue-template-compiler": "^2.7.10"
+    "@nuxtjs/axios": "^5.10.3",
+    "@nuxtjs/markdownit": "^1.2.9",
+    "bootstrap-vue": "^2.15.0",
+    "nuxt": "^2.0.0"
   },
   "devDependencies": {}
 }

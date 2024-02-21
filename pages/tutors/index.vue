@@ -1,39 +1,40 @@
 <template>
   <div>
-    <section id="intro">
-      <div class="jumbotron">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <h1 class="display-4">Tutor Dragon</h1>
-              <p class="lead">100% find your ideal tutor</p>
-              <a class="btn btn-primary btn-lg" href="#" role="button"
-                >Search Tutor</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="latest">
       <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <h3>Exceptional Tutor</h3>
+        <div class="row thehead">
+          <div class="col-md-8 text-left">
+            <h3>搜尋租盤</h3>
+            <p class="lead">100%終身免佣。自助配對。</p>
+          </div>
+          <div class="col-md-4 text-right">
+            <p><a href="#">主頁</a> > <a href="#">搜尋租盤</a></p>
+          </div>
+        </div>
+        <div class="row searchproperties">
+          <div class="col-md-8 text-center">
+            <div class="row sortingwrapper">
+              <select class="form-control" id="sorting">
+                <option>預設排序</option>
+                <option>租金 (由低至高)</option>
+                <option>租金 (由高至低)</option>
+                <option>實用面積 (由低至高)</option>
+                <option>實用面積 (由高至高低)</option>
+              </select>
+            </div>
             <div class="row">
-              <div class="col-md-4 text-left">
+              <div class="col-md-6 text-left">
                 <div class="outer">
-                  <a href="single.html">
+                  <a href="/property/test1">
                     <div class="upper">
                       <img src="pictures/inner.png" />
                       <div class="innertext">
-                        <span>Accepting new students</span>
-                        <h4>$700 / Hrs</h4>
+                        <span>放租中</span>
+                        <h4>HKD14,800 / 每月</h4>
                       </div>
                     </div>
                     <div class="lower">
-                      <h3>TSUEN WAN WEST</h3>
+                      <h3>將軍澳廣場6座高層</h3>
                       <span
                         ><svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +71,7 @@
                   </a>
                 </div>
               </div>
-              <div class="col-md-4 text-left">
+              <div class="col-md-6 text-left">
                 <div class="outer">
                   <a href="single.html">
                     <div class="upper">
@@ -118,7 +119,7 @@
                   </a>
                 </div>
               </div>
-              <div class="col-md-4 text-left">
+              <div class="col-md-6 text-left">
                 <div class="outer">
                   <a href="single.html">
                     <div class="upper">
@@ -167,6 +168,33 @@
                 </div>
               </div>
             </div>
+            <!-- end row -->
+          </div>
+          <div class="col-md-4">
+            <h3 class="font24">搜尋條件</h3>
+            <form>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">地址/大廈名稱/街道</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleFormControlInput1"
+                  placeholder="例如：金雞大廈"
+                />
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">地區</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>地區1</option>
+                  <option>地區2</option>
+                  <option>地區3</option>
+                  <option>地區4</option>
+                  <option>地區5</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn btn-primary mt20">搜尋</button>
+            </form>
           </div>
         </div>
       </div>
@@ -178,7 +206,7 @@
 export default {
   head() {
     return {
-      title: "Tutor Dragon",
+      title: "Pets",
       meta: [
         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
         {

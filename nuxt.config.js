@@ -1,59 +1,59 @@
 export default {
-  // Global page headers: https://go.nuxtjs.dev/config-head
+  mode: "universal",
+  /*
+   ** Headers of the page
+   */
   head: {
-    title: 'comp3421-project',
-    htmlAttrs: {
-      lang: 'en'
-    },
+    title: process.env.npm_package_name || "",
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {
+        hid: "description",
+        name: "description",
+        content: process.env.npm_package_description || "",
+      },
     ],
     link: [
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Noto+Sans+TC|Open+Sans&display=swap' },
-      { rel: 'stylesheet', href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' },
-      { rel: 'stylesheet', href: './css/style.css' },
-    ], script: [
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       {
-        src: 'https://code.jquery.com/jquery-3.3.1.slim.min.js', defer: true
-      }, {
-        src: 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', defer: true
-      }, {
-        src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', defer: true
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css?family=Noto+Sans+TC|Open+Sans&display=swap",
       },
-      {
-        src: '/js/script.js', defer: true, body: true
-      }
-
-    ]
+      { rel: "stylesheet", href: "/css/style.css" },
+    ],
   },
-
-  // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-  ],
-
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-  ],
-
-  // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
-
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-  ],
-
-  // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-  ],
-
-  // Build Configuration: https://go.nuxtjs.dev/config-build
+  /*
+   ** Customize the progress-bar color
+   */
+  loading: { color: "#fff" },
+  /*
+   ** Global CSS
+   */
+  css: [],
+  /*
+   ** Plugins to load before mounting the App
+   */
+  plugins: [],
+  /*
+   ** Nuxt.js dev-modules
+   */
+  buildModules: [],
+  /*
+   ** Nuxt.js modules
+   */
+  modules: ["bootstrap-vue/nuxt"],
+  /*
+   ** Build configuration
+   */
   build: {
+    /*
+     ** You can extend webpack config here
+     */
+    extend(config, ctx) {},
   },
   env: {
-    frontendURL: 'localhost:3000',
-    backendURL: '',
-  }
-}
+    backendurl: "",
+    frontendurl: "http://localhost:3000/",
+  },
+};
