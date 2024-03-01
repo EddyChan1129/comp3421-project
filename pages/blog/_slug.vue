@@ -28,7 +28,7 @@ export default {
   },
   async asyncData({ $axios, params }) {
     const blogs = await $axios.$get(
-      "http://139.180.132.232:1337/blogs?slug=" + params.slug
+      process.env.backendURL + "/blogs?slug=" + params.slug
     );
 
     let blog = blogs[0];

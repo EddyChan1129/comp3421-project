@@ -19,7 +19,7 @@
                 class="col-md-4 text-left"
               >
                 <div class="outer">
-                  <a :href="frontendURL + 'blog/' + blog.slug">
+                  <a :href="frontendURL + '/blog/' + blog.slug">
                     <div class="upper">
                       <img
                         v-if="blog.thumbnail[0]"
@@ -67,7 +67,7 @@ export default {
     };
   },
   async asyncData({ $axios }) {
-    const blogs = await $axios.$get("http://139.180.132.232:1337/blogs");
+    const blogs = await $axios.$get(process.env.backendURL + "/blogs");
     return { blogs };
   },
 };

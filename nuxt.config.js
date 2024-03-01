@@ -57,6 +57,6 @@ export default {
   },
   env: {
     backendURL: "http://139.180.132.232:1337",
-    frontendURL: "http://localhost:3000/",
+    frontendURL: "http://localhost:3000",
   },
 };
