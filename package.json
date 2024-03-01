@@ -1,7 +1,7 @@
 {
-  "name": "threezero",
+  "name": "COMP3421",
   "version": "1.0.0",
-  "description": "My remarkable Nuxt.js project",
+  "description": "COMP3421 Nuxt.js project",
   "author": "",
   "private": true,
   "scripts": {
@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.10.3",
-    "@nuxtjs/markdownit": "^1.2.9",
+    "@nuxtjs/markdownit": "^1.2.10",
     "bootstrap-vue": "^2.15.0",
     "nuxt": "^2.0.0"
   }

@@ -19,7 +19,7 @@
                 class="col-md-4 text-left"
               >
                 <div class="outer">
-                  <a :href="frontendURL + blog.slug">
+                  <a :href="frontendURL + 'blog/' + blog.slug">
                     <div class="upper">
                       <img
                         v-if="blog.thumbnail[0]"
