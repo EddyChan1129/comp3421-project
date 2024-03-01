@@ -42,7 +42,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ["bootstrap-vue/nuxt"],
+  modules: ["bootstrap-vue/nuxt", "@nuxtjs/axios"],
   /*
    ** Build configuration
    */
@@ -53,7 +53,7 @@ export default {
     extend(config, ctx) {},
   },
   env: {
-    backendurl: "",
-    frontendurl: "http://localhost:3000/",
+    backendURL: "http://139.180.132.232:1337",
+    frontendURL: "http://localhost:3000/",
   },
 };
