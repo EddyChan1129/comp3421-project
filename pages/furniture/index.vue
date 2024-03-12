@@ -204,18 +204,17 @@
 
 <script>
 export default {
-  head() {
+  data() {
     return {
-      title: "Pets",
-      meta: [
-        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-        {
-          hid: "description",
-          name: "description",
-          content: "My custom description",
-        },
-      ],
+      frontendURL: process.env.frontendURL,
+      backendURL: process.env.backendURL,
     };
+  },
+  async asyncData({ $axios }) {
+    const furnitures = await $axios.$get(
+      process.env.backendURL + "/furnitures"
+    );
+    return { furnitures };
   },
 };
 </script>

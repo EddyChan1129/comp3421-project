@@ -5,6 +5,7 @@
         <div class="row thehead mb30">
           <div class="col-md-8 text-left">
             <h3>網誌</h3>
+            {{ blogs }}
           </div>
           <div class="col-md-4 text-right">
             <p><a href="#">主頁</a> > <a href="#">網誌</a></p>

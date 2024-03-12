@@ -15,7 +15,7 @@
               <b-navbar-nav>
                 <b-nav-item><nuxt-link to="/">Home</nuxt-link></b-nav-item>
                 <b-nav-item
-                  ><nuxt-link to="/tutors">Search</nuxt-link></b-nav-item
+                  ><nuxt-link to="/furniture">Search</nuxt-link></b-nav-item
                 >
                 <b-nav-item><nuxt-link to="/blog">Blog</nuxt-link></b-nav-item>
                 <b-nav-item><nuxt-link to="/faq">FAQ</nuxt-link></b-nav-item>
