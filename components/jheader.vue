@@ -26,14 +26,18 @@
 
               <!-- Right aligned nav items -->
               <b-navbar-nav class="ml-auto">
-                <b-nav-item-dropdown right class="mt8">
+                <b-nav-item-dropdown v-if="getUserJwt" right class="mt8">
                   <!-- Using 'button-content' slot -->
                   <template v-slot:button-content> My Account</template>
-                  <b-dropdown-item href="#">My Account</b-dropdown-item>
-                  <b-dropdown-item href="#">Logout</b-dropdown-item>
+                  <b-dropdown-item href="#"
+                    >My Account({{ getUserJwt }})</b-dropdown-item
+                  >
+                  <b-dropdown-item @click="logout" href="#"
+                    >Logout</b-dropdown-item
+                  >
                 </b-nav-item-dropdown>
-                <b-nav-item class="mt8"
-                  ><nuxt-link to="/"
+                <b-nav-item v-if="!getUserJwt" class="mt8"
+                  ><nuxt-link to="/users/signin"
                     ><svg
                       class="someright"
                       width="24"
@@ -50,7 +54,7 @@
                   ></b-nav-item
                 >
                 <b-nav-item
-                  ><nuxt-link class="btn btnnew" to="/"
+                  ><nuxt-link class="btn btnnew" to="/users/register"
                     >Register</nuxt-link
                   ></b-nav-item
                 >
@@ -62,3 +66,19 @@
     </header>
   </div>
 </template>
+
+<script>
+import { mapMutations } from "vuex";
+export default {
+  computed: {
+    getUserJwt() {
+      return this.$store.getters["auth/getUserJwt"];
+    },
+  },
+  methods: {
+    ...mapMutations({
+      logout: "auth/logout",
+    }),
+  },
+};
+</script>

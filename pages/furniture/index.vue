@@ -88,6 +88,9 @@
               </div>
             </div>
             <!-- end row -->
+            <button @click="showmore" v-if="totalFurnitures > showing">
+              Show more
+            </button>
           </div>
           <div class="col-md-4">
             <h3 class="font24">Search by</h3>
@@ -153,6 +156,8 @@ export default {
         selectLocation: "all",
       },
       sort: "priceLow",
+      showing: 2,
+      totalFurnitures: "",
     };
   },
   async asyncData({ $axios }) {
@@ -200,8 +205,14 @@ export default {
           return b.price - a.price;
         });
       }
+      this.totalFurnitures = this.furnitures.length;
 
-      return filteredFurnitures;
+      return filteredFurnitures.slice(0, this.showing);
+    },
+  },
+  methods: {
+    showmore() {
+      this.showing += 3;
     },
   },
 };
