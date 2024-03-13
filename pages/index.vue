@@ -5,7 +5,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <h1 class="display-4">Tutor Dragon</h1>
+              <h1 class="display-4">Furniture Dragon</h1>
               <p class="lead">100% find your ideal tutor</p>
               <a class="btn btn-primary btn-lg" href="#" role="button"
                 >Search Tutor</a
@@ -178,7 +178,7 @@
 export default {
   head() {
     return {
-      title: "Tutor Dragon",
+      title: "Furniture Dragon",
       meta: [
         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
         {

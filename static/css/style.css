@@ -333,7 +333,10 @@ i.category {
   text-align: right;
   position: absolute;
   right: 20px;
+  z-index: 999;
 }
+
+
 .sortingwrapper {
   position: relative;
   margin-bottom: 60px;
@@ -375,3 +378,4 @@ i.category {
     margin-bottom: 18px;
   }
 }
+
