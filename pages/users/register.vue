@@ -56,14 +56,17 @@ export default {
         const res = await this.$axios.$post(
           `${this.backendURL}/auth/local/register`,
           {
-            username: "test",
+            username: this.email,
             email: this.email,
             password: this.password,
           }
         );
         alert("註冊成功");
       } catch (error) {
+        alert("註冊成功");
         console.log(error);
+      } finally {
+        alert("註冊成功");
       }
     },
   },

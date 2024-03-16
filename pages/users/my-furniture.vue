@@ -43,14 +43,17 @@
 
           <main role="main" class="col-md-9 ml-sm-auto col-lg-10">
             <div>
-              <h3>我的樓盤</h3>
-
+              <h3>我的樓盤 {{ furnitures }}</h3>
               <ul class="list-group">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Morbi leo risus</li>
-                <li class="list-group-item">Porta ac consectetur ac</li>
-                <li class="list-group-item">Vestibulum at eros</li>
+                <li
+                  v-for="(furniture, index) in furnitures"
+                  :key="index"
+                  class="list-group-item"
+                >
+                  <nuxt-link :to="'/users/update-tutor/' + furniture.id">
+                    {{ furniture.title }}
+                  </nuxt-link>
+                </li>
               </ul>
             </div>
           </main>
@@ -59,3 +62,29 @@
     </section>
   </div>
 </template>
+
+<script>
+export default {
+  middleware: "auth",
+  async asyncData({ $axios, store, params }) {
+    const user = await $axios.$get(process.env.backendURL + "/users/me", {
+      headers: {
+        Authorization: store.getters["auth/getUserJwt"],
+      },
+    });
+
+    const furnitures = await $axios.$get(
+      process.env.backendURL +
+        "/furnitures?users_permissions_user.username=" +
+        user.username,
+      {
+        headers: {
+          Authorization: store.getters["auth/getUserJwt"],
+        },
+      }
+    );
+
+    return { user, furnitures };
+  },
+};
+</script>

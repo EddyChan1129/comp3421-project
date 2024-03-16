@@ -51,7 +51,11 @@
               </div>
               <div class="form-group">
                 <label>Title</label>
-                <input v-model="title" type="text" class="form-control" />
+                <input
+                  v-model="furniture.title"
+                  type="text"
+                  class="form-control"
+                />
               </div>
               <div class="form-group">
                 <label>Is Second Hand?</label>
@@ -59,7 +63,11 @@
               </div>
               <div class="form-group">
                 <label>Price</label>
-                <input v-model="price" type="number" class="form-control" />
+                <input
+                  v-model="furniture.price"
+                  type="number"
+                  class="form-control"
+                />
               </div>
               <div class="form-group">
                 <label>Transaction Location</label>
@@ -80,11 +88,18 @@
               </div>
 
               <button
-                @click="createFurniture"
+                @click="editFurniture"
                 type="submit"
                 class="btn btn-primary"
               >
-                Create
+                Update
+              </button>
+              <button
+                @click="deleteFurniture"
+                type="submit"
+                class="btn btn-primary"
+              >
+                Delete
               </button>
             </div>
           </main>
@@ -97,24 +112,22 @@
 <script>
 export default {
   middleware: "auth",
-  data() {
-    return {
-      frontendURL: process.env.frontendURL,
-      backendURL: process.env.backendURL,
-      title: "",
-      price: "",
-    };
+
+  async asyncData({ $axios, params }) {
+    const furniture = await $axios.$get(
+      process.env.backendURL + "/furnitures/" + params.id
+    );
+
+    return { furniture };
   },
   methods: {
-    async createFurniture() {
-      console.log(this.thumbnail);
-
+    async editFurniture() {
       const res = await this.$axios
-        .$post(
-          process.env.backendURL + "/furnitures",
+        .$put(
+          process.env.backendURL + "/furnitures/" + this.$route.params.id,
           {
-            title: this.title,
-            price: this.price,
+            title: this.furniture.title,
+            price: this.furniture.price,
           },
           {
             headers: {
@@ -123,10 +136,28 @@ export default {
           }
         )
         .then((res) => {
-          alert("Furniture created successfully");
+          alert("Furniture update successfully");
         })
         .catch((err) => {
-          alert("Furniture created failed");
+          alert("Furniture update failed");
+        });
+    },
+    async deleteFurniture() {
+      const res = await this.$axios
+        .$delete(
+          process.env.backendURL + "/furnitures/" + this.$route.params.id,
+
+          {
+            headers: {
+              Authorization: this.$store.getters["auth/getUserJwt"],
+            },
+          }
+        )
+        .then((res) => {
+          alert("Furniture delete successfully");
+        })
+        .catch((err) => {
+          alert("Furniture delete failed");
         });
     },
   },
