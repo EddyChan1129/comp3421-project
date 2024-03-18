@@ -47,18 +47,20 @@
 
               <div class="form-group">
                 <label>電郵</label>
-                <input type="email" class="form-control" />
+                <input v-model="user.email" type="email" class="form-control" />
               </div>
               <div class="form-group">
                 <label>年紀</label>
-                <input type="text" class="form-control" />
+                <input v-model="user.age" type="text" class="form-control" />
               </div>
               <div class="form-group">
                 <label>密碼</label>
                 <input type="password" class="form-control" />
               </div>
 
-              <button type="submit" class="btn btn-primary">更改資料</button>
+              <button @click="updateUser" type="submit" class="btn btn-primary">
+                更改資料
+              </button>
             </div>
           </main>
         </div>
@@ -66,3 +68,41 @@
     </section>
   </div>
 </template>
+
+<script>
+export default {
+  middleware: "auth",
+  async asyncData({ $axios, store, params }) {
+    const user = await $axios.$get(process.env.backendURL + "/users/me", {
+      headers: {
+        Authorization: store.getters["auth/getUserJwt"],
+      },
+    });
+
+    return { user };
+  },
+  methods: {
+    async updateUser() {
+      const res = await this.$axios
+        .$put(
+          process.env.backendURL + "/users/" + this.user._id,
+          {
+            email: this.user.email,
+            age: this.user.age,
+          },
+          {
+            headers: {
+              Authorization: this.$store.getters["auth/getUserJwt"],
+            },
+          }
+        )
+        .then((res) => {
+          alert("User update successfully");
+        })
+        .catch((err) => {
+          alert("User update failed");
+        });
+    },
+  },
+};
+</script>

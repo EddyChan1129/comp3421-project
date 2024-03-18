@@ -53,6 +53,8 @@ export default {
     }),
     async register() {
       try {
+        alert("註冊成功");
+
         const res = await this.$axios.$post(
           `${this.backendURL}/auth/local/register`,
           {
@@ -61,7 +63,6 @@ export default {
             password: this.password,
           }
         );
-        alert("註冊成功");
       } catch (error) {
         alert("註冊成功");
         console.log(error);

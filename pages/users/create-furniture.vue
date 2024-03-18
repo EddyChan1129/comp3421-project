@@ -58,6 +58,16 @@
                 <input type="number" class="form-control" />
               </div>
               <div class="form-group">
+                <label>Image</label>
+                <input
+                  type="file"
+                  id="file"
+                  ref="file"
+                  v-on:change="handleFileUpload"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group">
                 <label>Price</label>
                 <input v-model="price" type="number" class="form-control" />
               </div>
@@ -103,25 +113,31 @@ export default {
       backendURL: process.env.backendURL,
       title: "",
       price: "",
+      file: "",
     };
   },
   methods: {
+    handleFileUpload() {
+      this.file = this.$refs.file.files[0];
+      console.log(this.file);
+    },
     async createFurniture() {
-      console.log(this.thumbnail);
+      let formData = new FormData();
+      formData.append("files.thumbnail", this.file);
+
+      let jsonData = {
+        title: this.title,
+        price: this.price,
+      };
+
+      formData.append("data", JSON.stringify(jsonData));
 
       const res = await this.$axios
-        .$post(
-          process.env.backendURL + "/furnitures",
-          {
-            title: this.title,
-            price: this.price,
+        .$post(process.env.backendURL + "/furnitures", formData, {
+          headers: {
+            Authorization: this.$store.getters["auth/getUserJwt"],
           },
-          {
-            headers: {
-              Authorization: this.$store.getters["auth/getUserJwt"],
-            },
-          }
-        )
+        })
         .then((res) => {
           alert("Furniture created successfully");
         })
