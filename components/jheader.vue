@@ -18,7 +18,7 @@
               <b-navbar-nav>
                 <b-nav-item><nuxt-link to="/">Home</nuxt-link></b-nav-item>
                 <b-nav-item><nuxt-link to="/furniture">Furnitures</nuxt-link></b-nav-item>
-                <b-nav-item><nuxt-link to="/blog">Create</nuxt-link></b-nav-item>
+                <b-nav-item><nuxt-link to="/blog">Blogs</nuxt-link></b-nav-item>
                 <b-nav-item><nuxt-link to="/faq">FAQ</nuxt-link></b-nav-item>
                 <b-nav-item
                   ><nuxt-link to="/contact">Contact Us</nuxt-link></b-nav-item
@@ -31,10 +31,13 @@
                   <!-- Using 'button-content' slot -->
                   <template v-slot:button-content> My Account</template>
                   <b-dropdown-item href="#"
-                    >My Account({{ getUserJwt }})</b-dropdown-item
+                    >My Account</b-dropdown-item
                   >
                   <b-dropdown-item @click="logout" href="#"
                     >Logout</b-dropdown-item
+                  >
+                    <b-dropdown-item  href="/users/my-account"
+                    >Update my info</b-dropdown-item
                   >
                 </b-nav-item-dropdown>
                 <b-nav-item v-if="!getUserJwt" class="mt8"
@@ -57,6 +60,12 @@
                 <b-nav-item
                   ><nuxt-link  v-if="!getUserJwt"  class="btn btnnew" to="/users/register"
                     >Register</nuxt-link
+                  ></b-nav-item
+                >
+
+                  <b-nav-item
+                  ><nuxt-link  v-if="getUserJwt"  class="btn btnnew" to="/users/create-furniture"
+                    >Sell Furnitures</nuxt-link
                   ></b-nav-item
                 >
               </b-navbar-nav>
