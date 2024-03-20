@@ -6,7 +6,7 @@
           <b-navbar toggleable="lg">
             <b-navbar-brand href="#"
               ><nuxt-link to="/"
-                ><img src="/pictures/logo2.png" width="155" /></nuxt-link
+                ><img src="/pictures/pic1.jpg" width="155" /></nuxt-link
             ></b-navbar-brand>
 
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
