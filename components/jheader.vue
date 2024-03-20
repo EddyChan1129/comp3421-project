@@ -6,7 +6,10 @@
           <b-navbar toggleable="lg">
             <b-navbar-brand href="#"
               ><nuxt-link to="/"
-                ><img src="/pictures/pic1.jpg" width="155" /></nuxt-link
+                ><img
+                  src="/pictures/logo.webp"
+                  width="100"
+                  class="logo_img" /></nuxt-link
             ></b-navbar-brand>
 
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -14,10 +17,8 @@
             <b-collapse id="nav-collapse" is-nav>
               <b-navbar-nav>
                 <b-nav-item><nuxt-link to="/">Home</nuxt-link></b-nav-item>
-                <b-nav-item
-                  ><nuxt-link to="/furniture">Search</nuxt-link></b-nav-item
-                >
-                <b-nav-item><nuxt-link to="/blog">Blog</nuxt-link></b-nav-item>
+                <b-nav-item><nuxt-link to="/furniture">Furnitures</nuxt-link></b-nav-item>
+                <b-nav-item><nuxt-link to="/blog">Create</nuxt-link></b-nav-item>
                 <b-nav-item><nuxt-link to="/faq">FAQ</nuxt-link></b-nav-item>
                 <b-nav-item
                   ><nuxt-link to="/contact">Contact Us</nuxt-link></b-nav-item

@@ -4,10 +4,10 @@
       <div class="container">
         <div class="row thehead">
           <div class="col-md-8 text-left">
-            <h3 class="notag">常見問題</h3>
+            <h3 class="notag">FAQ</h3>
           </div>
           <div class="col-md-4 text-right">
-            <p><a href="#">主頁</a> > <a href="#">常見問題</a></p>
+            <p><a href="#">Home</a> > <a href="#">FAQ</a></p>
           </div>
         </div>
         <div class="row">
@@ -17,7 +17,7 @@
                 <b-card no-body class="mb-1">
                   <b-card-header header-tag="header" class="p-1" role="tab">
                     <b-button block v-b-toggle.accordion-1 variant="info"
-                      >Accordion 1</b-button
+                      >Question 1</b-button
                     >
                   </b-card-header>
                   <b-collapse
@@ -39,7 +39,7 @@
                 <b-card no-body class="mb-1">
                   <b-card-header header-tag="header" class="p-1" role="tab">
                     <b-button block v-b-toggle.accordion-2 variant="info"
-                      >Accordion 2</b-button
+                      >Question 2</b-button
                     >
                   </b-card-header>
                   <b-collapse
@@ -56,7 +56,7 @@
                 <b-card no-body class="mb-1">
                   <b-card-header header-tag="header" class="p-1" role="tab">
                     <b-button block v-b-toggle.accordion-3 variant="info"
-                      >Accordion 3</b-button
+                      >Question 3</b-button
                     >
                   </b-card-header>
                   <b-collapse

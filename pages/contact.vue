@@ -6,11 +6,10 @@
           <div class="col-md-8"></div>
           <div class="col-md-4">
             <div class="cinner">
-              <h1>聯絡我們</h1>
+              <h1>Contant Us</h1>
               <hr />
               <p>
-                銅鑼灣謝斐道535號Tower 535 20樓<br />
-                電話: (852) 6761-3714
+                Phones: (852) 9716-6524
               </p>
             </div>
           </div>
@@ -21,8 +20,8 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4">
-            <h3>聯絡方法</h3>
-            <p>如有任何查詢, 歡迎致電或電郵我們。</p>
+            <h3>Methods</h3>
+            <p>If you have any questions please fell feel to contact us.</p>
             <p><i class="fas fa-phone"></i> 電話: (852) 1234-5678</p>
             <p>
               <i class="fas fa-envelope"></i> 電郵:
@@ -30,14 +29,14 @@
             </p>
           </div>
           <div class="col-md-8">
-            <h3>查詢表單</h3>
+            <h3>Query List</h3>
             <div class="input-group mb-3">
               <input
                 type="text"
                 class="form-control"
                 aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-default"
-                placeholder="你的名字"
+                placeholder="Your name"
               />
             </div>
             <div class="input-group mb-3">
@@ -46,7 +45,7 @@
                 class="form-control"
                 aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-default"
-                placeholder="你的電郵"
+                placeholder="your email"
               />
             </div>
             <div class="input-group mb-3">
@@ -55,17 +54,17 @@
                 class="form-control"
                 aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-default"
-                placeholder="你的電話"
+                placeholder="your phones"
               />
             </div>
             <div class="input-group">
               <textarea
                 class="form-control"
                 aria-label="With textarea"
-                placeholder="你的查詢"
+                placeholder="your query"
               ></textarea>
             </div>
-            <a class="btn btn-primary btn-lg" href="#" role="button">提交</a>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Submit</a>
           </div>
         </div>
       </div>
