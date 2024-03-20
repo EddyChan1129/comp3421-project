@@ -55,7 +55,7 @@
                   ></b-nav-item
                 >
                 <b-nav-item
-                  ><nuxt-link class="btn btnnew" to="/users/register"
+                  ><nuxt-link  v-if="!getUserJwt"  class="btn btnnew" to="/users/register"
                     >Register</nuxt-link
                   ></b-nav-item
                 >

@@ -5,29 +5,25 @@
         <div class="row">
           <div class="col-md-8 offset-md-2">
             <div class="alert alert-primary" role="alert">
-              已經有帳號？<a href="">按此</a>立即登入
+              Already have accout? <nuxt-link to="/users/signin">Login</nuxt-link>
             </div>
           </div>
 
           <div class="col-md-12 text-center">
-            <h1>註冊</h1>
+            <h1>Registration</h1>
           </div>
 
           <div class="col-md-8 offset-md-2">
             <div class="form-group">
-              <label>你的電郵</label>
+              <label>Your mail</label>
               <input v-model="email" type="email" class="form-control" />
             </div>
             <div class="form-group">
-              <label>密碼</label>
+              <label>Password</label>
               <input v-model="password" type="password" class="form-control" />
             </div>
-            <small id="emailHelp" class="form-text text-muted"
-              >*當你按下「註冊」，代表你同意並接受我們的
-              <a href="">使用條款</a></small
-            >
             <button type="submit" class="btn btn-primary" @click="register">
-              註冊
+              Register
             </button>
           </div>
         </div>
@@ -53,8 +49,6 @@ export default {
     }),
     async register() {
       try {
-        alert("註冊成功");
-
         const res = await this.$axios.$post(
           `${this.backendURL}/auth/local/register`,
           {
@@ -64,11 +58,9 @@ export default {
           }
         );
       } catch (error) {
-        alert("註冊成功");
+        alert("Email already exits.");
         console.log(error);
-      } finally {
-        alert("註冊成功");
-      }
+      } 
     },
   },
 };
