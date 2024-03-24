@@ -22,6 +22,7 @@ export default {
       },
       { rel: "stylesheet", href: "/css/style.css" },
     ],
+    script: [{ src: "https://js.stripe.com/v3" }],
   },
   /*
    ** Customize the progress-bar color

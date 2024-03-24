@@ -43,14 +43,14 @@
 
           <main role="main" class="col-md-9 ml-sm-auto col-lg-10">
             <div>
-              <h3>我的樓盤 {{ furnitures }}</h3>
+              <h3>我的樓盤</h3>
               <ul class="list-group">
                 <li
                   v-for="(furniture, index) in furnitures"
                   :key="index"
                   class="list-group-item"
                 >
-                  <nuxt-link :to="'/users/update-tutor/' + furniture.id">
+                  <nuxt-link :to="'/users/update-furniture/' + furniture.id">
                     {{ furniture.title }}
                   </nuxt-link>
                 </li>

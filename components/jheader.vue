@@ -4,7 +4,7 @@
       <div class="container">
         <div>
           <b-navbar toggleable="lg">
-            <b-navbar-brand href="#"
+            <b-navbar-brand
               ><nuxt-link to="/"
                 ><img
                   src="/pictures/logo.webp"
@@ -17,7 +17,9 @@
             <b-collapse id="nav-collapse" is-nav>
               <b-navbar-nav>
                 <b-nav-item><nuxt-link to="/">Home</nuxt-link></b-nav-item>
-                <b-nav-item><nuxt-link to="/furniture">Furnitures</nuxt-link></b-nav-item>
+                <b-nav-item
+                  ><nuxt-link to="/furniture">Furnitures</nuxt-link></b-nav-item
+                >
                 <b-nav-item><nuxt-link to="/blog">Blogs</nuxt-link></b-nav-item>
                 <b-nav-item><nuxt-link to="/faq">FAQ</nuxt-link></b-nav-item>
                 <b-nav-item
@@ -29,14 +31,14 @@
               <b-navbar-nav class="ml-auto">
                 <b-nav-item-dropdown v-if="getUserJwt" right class="mt8">
                   <!-- Using 'button-content' slot -->
-                  <template v-slot:button-content> My Account</template>
-                  <b-dropdown-item href="#"
-                    >My Account</b-dropdown-item
-                  >
+                  <template v-slot:button-content>My Account</template>
+                  <b-dropdown-item href="#">
+                    <nuxt-link to="/users/my-account">My Account</nuxt-link>
+                  </b-dropdown-item>
                   <b-dropdown-item @click="logout" href="#"
                     >Logout</b-dropdown-item
                   >
-                    <b-dropdown-item  href="/users/my-account"
+                  <b-dropdown-item href="/users/my-account"
                     >Update my info</b-dropdown-item
                   >
                 </b-nav-item-dropdown>
@@ -58,13 +60,19 @@
                   ></b-nav-item
                 >
                 <b-nav-item
-                  ><nuxt-link  v-if="!getUserJwt"  class="btn btnnew" to="/users/register"
+                  ><nuxt-link
+                    v-if="!getUserJwt"
+                    class="btn btnnew"
+                    to="/users/register"
                     >Register</nuxt-link
                   ></b-nav-item
                 >
 
-                  <b-nav-item
-                  ><nuxt-link  v-if="getUserJwt"  class="btn btnnew" to="/users/create-furniture"
+                <b-nav-item
+                  ><nuxt-link
+                    v-if="getUserJwt"
+                    class="btn btnnew"
+                    to="/users/create-furniture"
                     >Sell Furnitures</nuxt-link
                   ></b-nav-item
                 >
