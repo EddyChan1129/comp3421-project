@@ -20,7 +20,7 @@
                       <path
                         d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm7.753 18.305c-.261-.586-.789-.991-1.871-1.241-2.293-.529-4.428-.993-3.393-2.945 3.145-5.942.833-9.119-2.489-9.119-3.388 0-5.644 3.299-2.489 9.119 1.066 1.964-1.148 2.427-3.393 2.945-1.084.25-1.608.658-1.867 1.246-1.405-1.723-2.251-3.919-2.251-6.31 0-5.514 4.486-10 10-10s10 4.486 10 10c0 2.389-.845 4.583-2.247 6.305z"
                       /></svg
-                    >我的帳號
+                    >My account
                   </a>
                 </li>
                 <li class="nav-item">
@@ -34,7 +34,7 @@
                       <path
                         d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.707 13.946l-1.035 1.054h-.672v1h-1v1h-3v-2.292l3.146-3.185c.496 1.111 1.419 1.988 2.561 2.423zm5.293-4.279c0 2.025-1.642 3.667-3.667 3.667-2.024 0-3.666-1.642-3.666-3.667s1.642-3.667 3.666-3.667c2.025 0 3.667 1.642 3.667 3.667zm-1.375-1.375c0-.506-.41-.917-.917-.917s-.916.411-.916.917.409.917.916.917.917-.411.917-.917z"
                       /></svg
-                    >我的樓盤
+                    >My Funiture
                   </a>
                 </li>
               </ul>
@@ -43,23 +43,18 @@
 
           <main role="main" class="col-md-9 ml-sm-auto col-lg-10">
             <div>
-              <h3>我的帳號</h3>
+              <h3>My Account</h3>
 
               <div class="form-group">
-                <label>電郵</label>
+                <label>Email</label>
                 <input v-model="user.email" type="email" class="form-control" />
               </div>
               <div class="form-group">
-                <label>年紀</label>
+                <label>Age</label>
                 <input v-model="user.age" type="text" class="form-control" />
               </div>
-              <div class="form-group">
-                <label>密碼</label>
-                <input type="password" class="form-control" />
-              </div>
-
               <button @click="updateUser" type="submit" class="btn btn-primary">
-                更改資料
+                Update Info
               </button>
             </div>
           </main>
