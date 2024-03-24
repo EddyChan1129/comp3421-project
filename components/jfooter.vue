@@ -1,35 +1,38 @@
 <template>
-    <div>
-        <footer>
-	        
-	        <div class="container">
-		        <div class='row'>
-					  <div class='col-md-4 text-left'>
-						  <img src='/pictures/logo2.png' width='85'>
-						  <p>你的免費租屋網。100%終身免佣。自助配對。</p>
-					  </div>
-					  <div class='col-md-4 text-left'>
-						  <h4>連結</h4>
-						  <ul>
-					      	<li><a href='index.html'>主頁</a></li>
-					      	<li><a href='all.html'>搜尋租盤</a></li>
-					      	<li><a href='blog.html'>網誌</a></li>
-						  </ul>
-						  <ul>
-					      	<li><a href='faq.html'>常見問題</a></li>
-					      	<li><a href='contact.html'>聯絡我們</a></li>
-						  </ul>						  
-					  </div>
-					  <div class='col-md-4 text-left'>
-						  <h4>聯絡我們</h4>
-						  <p>銅鑼灣謝斐道535號Tower 535 20樓<br>
-							 Phone: (852) 6761-3714<br>
-							 E-Mail: <a href='mailto:xxx@gmail.com'>xxx@gmail.com</a>
-					      </p>
-					  </div>
-		        </div>
-	        </div>	        
-        
-        </footer>
-    </div>
+  <div>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 text-left">
+            <img src="/pictures/logo.webp" width="85" class="logo_img"/>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque
+              saepe, odit et qui iste laborum repellendus distinctio doloribus.
+              Sapiente obcaecati ex perferendis pariatur! Eligendi, nemo? Ipsum
+              vel eveniet eaque impedit.
+            </p>
+          </div>
+          <div class="col-md-4 text-left">
+            <h4>Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="all.html">Search</a></li>
+              <li><a href="blog.html">Blog</a></li>
+            </ul>
+            <ul>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 text-left">
+            <h4>Contact Us</h4>
+            <p>
+              Phone: (852) 9716-6524<br />
+              E-Mail: <a href="mailto:22026266d@connect.polyu.hk">22026266d@connect.polyu.hk</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
 </template>

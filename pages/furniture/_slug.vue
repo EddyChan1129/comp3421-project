@@ -40,9 +40,9 @@
           </div>
           <div class="col-md-4">
             <div class="apply">
-              <h5><i class="far fa-calendar-check"></i> 業主聯絡方法</h5>
+              <h5><i class="far fa-calendar-check"></i> Contant Seller</h5>
               <hr />
-              <p>你必須登入才能看見資料</p>
+              <p>You have to login to view the information</p>
             </div>
           </div>
         </div>

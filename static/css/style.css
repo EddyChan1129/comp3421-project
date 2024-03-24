@@ -409,6 +409,10 @@ i.category {
   color: white;
 }
 
+.logo_img{
+  border-radius: 50%;
+}
+
 @media only screen and (max-width: 768px) {
   #second h5 {
     margin-bottom: 50px;

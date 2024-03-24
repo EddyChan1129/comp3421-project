@@ -88,7 +88,7 @@
               </div>
             </div>
             <!-- end row -->
-            <button @click="showmore" v-if="totalFurnitures > showing">
+            <button @click="showmore" class="btn btn-primary btn-lg" v-if="totalFurnitures > showing">
               Show more
             </button>
           </div>

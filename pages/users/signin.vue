@@ -5,12 +5,12 @@
         <div class="row">
           <div class="col-md-8 offset-md-2">
             <div class="alert alert-primary" role="alert">
-              還沒有帳號嗎？<a href="">按此</a>立即註冊
+              Still don't have account? <nuxt-link to="/users/register"> REGISTER</nuxt-link>
             </div>
           </div>
 
           <div class="col-md-12 text-center">
-            <h1>登入</h1>
+            <h1>Login</h1>
           </div>
 
           <div class="col-md-8 offset-md-2">
@@ -22,12 +22,12 @@
               <label>Password</label>
               <input v-model="password" type="password" class="form-control" />
             </div>
-            <small id="emailHelp" class="form-text text-muted"
+            <!-- <small id="emailHelp" class="form-text text-muted"
               >忘記密碼？
               <a href="/users/forgetpassword">按此</a>重新設定密碼</small
-            >
+            > -->
             <button @click="login" type="submit" class="btn btn-primary">
-              登入
+              Login
             </button>
           </div>
         </div>
