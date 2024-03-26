@@ -2,7 +2,6 @@
     <div>
 
         <cart />
-
         <div v-for='(product, idx) in filteredproducts' :key='idx'>
 
             {{ product.title }}<br>
