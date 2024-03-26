@@ -16,18 +16,23 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8">
-            <h1>{{ furniture.title }} <span class="thetag">{{furniture.secondHand ? "New Product":"Second Hand"}}</span></h1>
-            <h5>${{furniture.price}}</h5>
+            <h1>
+              {{ furniture.title }}
+              <span class="thetag">{{
+                furniture.secondHand ? "New Product" : "Second Hand"
+              }}</span>
+            </h1>
+            <h5>${{ furniture.price }}</h5>
             <p>
-              Transaction location : {{furniture.location}}<br />
-              Long {{furniture.long}}<br />
-              Wide：{{furniture.wide}}<br />
-              Height: {{furniture.height}} 1<br />
-              Publication date: {{furniture.date}}
+              Transaction location : {{ furniture.location }}<br />
+              Long {{ furniture.long }}<br />
+              Wide：{{ furniture.wide }}<br />
+              Height: {{ furniture.height }} 1<br />
+              Publication date: {{ furniture.date }}
             </p>
             <h4>簡介</h4>
             <p>
-              {{furniture.desc}}
+              {{ furniture.desc }}
             </p>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -43,6 +48,11 @@
               <h5><i class="far fa-calendar-check"></i> Shopping cart</h5>
               <hr />
               <p>information</p>
+              <cart />
+              <button
+                @click="addToCart(furniture)"
+                class="btn btn-primary btn-lg"
+              >Add to cart</button>
             </div>
           </div>
         </div>
@@ -52,6 +62,9 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex";
+import cart from "~/components/cart.vue";
+
 export default {
   data() {
     return {
@@ -66,6 +79,15 @@ export default {
 
     let furniture = furnitures[0];
     return { furniture };
+  },
+  components: {
+    cart,
+  },
+  methods: {
+    ...mapMutations({
+      addToCart: "cart/add",
+      removeFromCart: "cart/remove",
+    }),
   },
 };
 </script>
