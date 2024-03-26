@@ -57,6 +57,7 @@ export default {
             password: this.password,
           }
         );
+        window.location.href = `${this.frontendURL}/`;
       } catch (error) {
         alert("Email already exits.");
         console.log(error);
