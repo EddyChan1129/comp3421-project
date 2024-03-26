@@ -8,32 +8,18 @@ export const actions = {
       if (parsed.userjwt == "null") commit("auth/setUser", null);
       else commit("auth/setUser", parsed.userjwt);
     }
-  },
-};
 
-/* export const state = {
-  x: "hello",
-};
+    let cart = []
+    if (req && req.headers && req.headers.cookie) {
+      const parsed = cookieparser.parse(req.headers.cookie)
+      try {
+        cart = (parsed.cart && JSON.parse(parsed.cart)) || []
+      } catch (e) {
+        console.error('Error parsing cart:', e)
+      }
+    }
+    commit('cart/setItems', cart)
 
-export const getters = {
-  editX(state) {
-    return state.x + " edited";
   },
-};
 
-export const mutations = {
-  addX(state, payload) {
-    state.x = payload;
-  },
 };
-
-export const actions = {
-  actionX(context, payload) {
-    context.commit("addX", payload);
-  },
-  async getIp(context) {
-    let ip = await this.$axios.$get("https://icanhazip.com");
-    context.commit("addX", ip);
-  },
-};
- */

@@ -40,9 +40,9 @@
           </div>
           <div class="col-md-4">
             <div class="apply">
-              <h5><i class="far fa-calendar-check"></i> Contant Seller</h5>
+              <h5><i class="far fa-calendar-check"></i> Shopping cart</h5>
               <hr />
-              <p>You have to login to view the information</p>
+              <p>information</p>
             </div>
           </div>
         </div>
