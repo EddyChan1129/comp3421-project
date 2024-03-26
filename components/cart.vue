@@ -49,7 +49,7 @@ export default {
         this.$router.push("/users/signin");
         return;
       }
-      this.$router.push("/orders/checkout");
+      this.$router.push("/orders/checkout-pretty");
     },
   },
   computed: {
