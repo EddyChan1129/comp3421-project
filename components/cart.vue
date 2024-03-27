@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click="emptyList">emptylist</button>
+    <button @click="emptyList">Empty Shopping Cart</button>
     <div v-if="price > 0">
       <table>
         <thead>

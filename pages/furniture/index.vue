@@ -28,7 +28,7 @@
                 class="col-md-6 text-left"
               >
                 <div class="outer">
-                  <a :href="frontendURL + '/furniture/' + furniture.slug">
+                  <nuxt-link :to="'/furniture/' + furniture.slug">
                     <div class="upper">
                       <img
                         v-if="furniture.thumbnail"
@@ -83,12 +83,16 @@
                         </div>
                       </div>
                     </div>
-                  </a>
+                  </nuxt-link>
                 </div>
               </div>
             </div>
             <!-- end row -->
-            <button @click="showmore" class="btn btn-primary btn-lg" v-if="totalFurnitures > showing">
+            <button
+              @click="showmore"
+              class="btn btn-primary btn-lg"
+              v-if="totalFurnitures > showing"
+            >
               Show more
             </button>
           </div>

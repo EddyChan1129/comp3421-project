@@ -8,9 +8,7 @@
             <div class="cinner">
               <h1>Contant Us</h1>
               <hr />
-              <p>
-                Phones: (852) 9716-6524
-              </p>
+              <p>Phones: (852) 9716-6524</p>
             </div>
           </div>
         </div>
@@ -22,10 +20,10 @@
           <div class="col-md-4">
             <h3>Methods</h3>
             <p>If you have any questions please fell feel to contact us.</p>
-            <p><i class="fas fa-phone"></i> 電話: (852) 1234-5678</p>
+            <p><i class="fas fa-phone"></i> Phone: (852) 1234-5678</p>
             <p>
-              <i class="fas fa-envelope"></i> 電郵:
-              <a href="mailto:xxx@gmail.com">xxx@gmail.com</a>
+              <i class="fas fa-envelope"></i> Email:
+              <a href="mailto:22026266d@gmail.com">22026266d@gmail.com</a>
             </p>
           </div>
           <div class="col-md-8">

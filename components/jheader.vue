@@ -21,7 +21,7 @@
                   ><nuxt-link to="/furniture">Furnitures</nuxt-link></b-nav-item
                 >
                 <b-nav-item
-                  ><nuxt-link to="/blog">Feedback</nuxt-link></b-nav-item
+                  ><nuxt-link to="/feedback">Feedback</nuxt-link></b-nav-item
                 >
                 <b-nav-item><nuxt-link to="/faq">FAQ</nuxt-link></b-nav-item>
                 <b-nav-item
@@ -34,15 +34,12 @@
                 <b-nav-item-dropdown v-if="getUserJwt" right class="mt8">
                   <!-- Using 'button-content' slot -->
                   <template v-slot:button-content>My Account</template>
-                  <b-dropdown-item href="#">
-                    <nuxt-link to="/users/my-account">My Account</nuxt-link>
-                  </b-dropdown-item>
                   <b-dropdown-item @click="logout" href="#"
                     >Logout</b-dropdown-item
                   >
-                  <b-dropdown-item href="/users/my-account"
-                    >Update my info</b-dropdown-item
-                  >
+                  <b-dropdown-item>
+                    <nuxt-link to="/users/my-account">Update my info</nuxt-link>
+                  </b-dropdown-item>
                 </b-nav-item-dropdown>
                 <b-nav-item v-if="!getUserJwt" class="mt8"
                   ><nuxt-link to="/users/signin"

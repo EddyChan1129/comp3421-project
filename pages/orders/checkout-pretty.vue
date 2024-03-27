@@ -2,7 +2,7 @@
   <div>
     <div class="container checkout">
       <div class="row">
-        <div class="col-md-6" v-if="!paid">
+        <div class="col-md-6">
           <h3>Order details</h3>
           <table class="table">
             <thead>
@@ -28,7 +28,7 @@
           <br />
         </div>
 
-        <div class="col-md-6" v-if="!paid">
+        <div class="col-md-6">
           <h3>Your Payment Details:</h3>
           <div class="form-group">
             <label>Shipping Address</label>
@@ -55,11 +55,7 @@
             Pay Now (USD {{ price }})
           </button>
 
-          <p v-if="loading">Please wait...</p>
-        </div>
-
-        <div class="col-md-12" v-if="paid">
-          <h3>Thank you for your purchase! We will .....</h3>
+          <p v-if="loading">Processing......</p>
         </div>
       </div>
     </div>
@@ -74,6 +70,7 @@ export default {
   middleware: "auth",
   data() {
     return {
+      frontendURL: process.env.frontendURL,
       complete: false,
       jwt: this.$store.getters["auth/getUserJwt"],
       stripeOptions: {
@@ -81,7 +78,6 @@ export default {
       },
       address: "HKHK HK",
       loading: false,
-      paid: false,
     };
   },
 
@@ -133,7 +129,7 @@ export default {
           .then((r) => {
             console.log(r);
             this.emptyList();
-            this.paid = true;
+            window.location.href = `${this.frontendURL}/`;
           })
           .catch((error) => {
             console.log(error);

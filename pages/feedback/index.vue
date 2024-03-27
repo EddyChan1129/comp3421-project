@@ -4,10 +4,10 @@
       <div class="container">
         <div class="row thehead mb30">
           <div class="col-md-8 text-left">
-            <h3>網誌</h3>
+            <h3>Feedback</h3>
           </div>
           <div class="col-md-4 text-right">
-            <p><a href="#">主頁</a> > <a href="#">網誌</a></p>
+            <p><a href="#">Home</a> > <a href="#">Feedback</a></p>
           </div>
         </div>
         <div class="row articles">
@@ -19,27 +19,22 @@
                 class="col-md-4 text-left"
               >
                 <div class="outer">
-                  <a :href="frontendURL + '/blog/' + blog.slug">
-                    <div class="upper">
-                      <img
-                        v-if="blog.thumbnail"
-                        :src="backendURL + blog.thumbnail.url"
-                        alt="Thumbnail Image"
-                      />
-                    </div>
-                    <div class="lower">
-                      <h3>{{ blog.title }}</h3>
-                      <span>{{ blog.date }}</span>
-                    </div>
-                  </a>
+                  <div class="upper">
+                    <img
+                      v-if="blog.thumbnail"
+                      :src="backendURL + blog.thumbnail.url"
+                      alt="Thumbnail Image"
+                    />
+                  </div>
+                  <div class="lower">
+                    <h3>{{ blog.title }}</h3>
+                    <span>{{ blog.date }}</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div
-            class="row text-center thepage"
-            v-if="totalPageCount > 1"
-          >
+          <div class="row text-center thepage" v-if="totalPageCount > 1">
             <nav aria-label="Page navigation example">
               <ul class="pagination">
                 <li v-if="currentPage > 1" class="page-item">

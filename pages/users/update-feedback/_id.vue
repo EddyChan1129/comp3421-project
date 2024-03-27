@@ -68,9 +68,19 @@
                   class="form-control"
                 />
               </div>
+              <div class="form-group">Original Image</div>
 
               <div class="form-group">
-                <label>Image</label>
+                <img
+                  width="100px"
+                  v-if="feedback.thumbnail"
+                  :src="backendURL + feedback.thumbnail.url"
+                  alt="Thumbnail Image"
+                />
+              </div>
+
+              <div class="form-group">
+                <label>Change image</label>
                 <input
                   type="file"
                   id="file"
@@ -118,6 +128,7 @@ export default {
   data() {
     return {
       file: "",
+      backendURL: process.env.backendURL,
     };
   },
 
