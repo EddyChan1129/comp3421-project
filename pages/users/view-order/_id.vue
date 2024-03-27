@@ -38,6 +38,21 @@
                   </nuxt-link>
                 </li>
                 <li class="nav-item">
+                  <nuxt-link class="nav-link" to="/users/my-feedback">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.707 13.946l-1.035 1.054h-.672v1h-1v1h-3v-2.292l3.146-3.185c.496 1.111 1.419 1.988 2.561 2.423zm5.293-4.279c0 2.025-1.642 3.667-3.667 3.667-2.024 0-3.666-1.642-3.666-3.667s1.642-3.667 3.666-3.667c2.025 0 3.667 1.642 3.667 3.667zm-1.375-1.375c0-.506-.41-.917-.917-.917s-.916.411-.916.917.409.917.916.917.917-.411.917-.917z"
+                      />
+                    </svg>
+                    My Feedback
+                  </nuxt-link>
+                </li>
+                <li class="nav-item">
                   <nuxt-link class="nav-link" to="/users/my-order">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -58,18 +73,42 @@
 
           <main role="main" class="col-md-9 ml-sm-auto col-lg-10">
             <div>
-              <h3>My Feedback</h3>
-              <ul class="list-group">
-                <li
-                  v-for="(blog, index) in blogs"
-                  :key="index"
-                  class="list-group-item"
-                >
-                  <nuxt-link :to="'/users/update-feedback/' + blog.id">
-                    {{ blog.title }}
-                  </nuxt-link>
-                </li>
-              </ul>
+              <h1>Order Info</h1>
+              <div class="form-group">
+                <div v-for="(product, index) in order.product" :key="index">
+                  <label>Product {{ index + 1 }}</label>
+                  <input
+                    v-model="product.title"
+                    type="textarea"
+                    class="form-control"
+                    disabled
+                  />
+                  <label>Product quantity</label>
+                  <input
+                    v-model="product.quantity"
+                    type="textarea"
+                    class="form-control"
+                    disabled
+                  />
+                  <label>Product price</label>
+                  <input
+                    v-model="product.price"
+                    type="textarea"
+                    class="form-control"
+                    disabled
+                  />
+                  <hr />
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Total Price</label>
+                <input
+                  v-model="order.amount"
+                  type="textarea"
+                  class="form-control"
+                  disabled
+                />
+              </div>
             </div>
           </main>
         </div>
@@ -81,25 +120,18 @@
 <script>
 export default {
   middleware: "auth",
-  async asyncData({ $axios, store, params }) {
-    const user = await $axios.$get(process.env.backendURL + "/users/me", {
-      headers: {
-        Authorization: store.getters["auth/getUserJwt"],
-      },
-    });
+  data() {
+    return {
+      backendURL: process.env.backendURL,
+    };
+  },
 
-    const blogs = await $axios.$get(
-      process.env.backendURL +
-        "/blogs?users_permissions_user.username=" +
-        user.username,
-      {
-        headers: {
-          Authorization: store.getters["auth/getUserJwt"],
-        },
-      }
+  async asyncData({ $axios, params }) {
+    const order = await $axios.$get(
+      process.env.backendURL + "/orders/" + params.id
     );
 
-    return { user, blogs };
+    return { order };
   },
 };
 </script>
