@@ -20,7 +20,9 @@
                 <b-nav-item
                   ><nuxt-link to="/furniture">Furnitures</nuxt-link></b-nav-item
                 >
-                <b-nav-item><nuxt-link to="/blog">Blogs</nuxt-link></b-nav-item>
+                <b-nav-item
+                  ><nuxt-link to="/blog">Feedback</nuxt-link></b-nav-item
+                >
                 <b-nav-item><nuxt-link to="/faq">FAQ</nuxt-link></b-nav-item>
                 <b-nav-item
                   ><nuxt-link to="/contact">Contact Us</nuxt-link></b-nav-item
@@ -72,8 +74,8 @@
                   ><nuxt-link
                     v-if="getUserJwt"
                     class="btn btnnew"
-                    to="/users/create-furniture"
-                    >Sell Furnitures</nuxt-link
+                    to="/users/create-feedback"
+                    >Create Feedback</nuxt-link
                   ></b-nav-item
                 >
               </b-navbar-nav>
