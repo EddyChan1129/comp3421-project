@@ -32,7 +32,7 @@
           <h3>Your Payment Details:</h3>
           <div class="form-group">
             <label>Shipping Address</label>
-            <input class="form-control" type="text" v-model="address" />
+            <input class="form-control" type="text" v-model="user.address" />
           </div>
 
           <div class="form-group">
@@ -68,6 +68,14 @@ import { mapMutations } from "vuex";
 
 export default {
   middleware: "auth",
+  async asyncData({ $axios, store, params }) {
+    const user = await $axios.$get(process.env.backendURL + "/users/me", {
+      headers: {
+        Authorization: store.getters["auth/getUserJwt"],
+      },
+    });
+    return { user };
+  },
   data() {
     return {
       frontendURL: process.env.frontendURL,
@@ -76,7 +84,6 @@ export default {
       stripeOptions: {
         // see https://stripe.com/docs/stripe.js#element-options for details
       },
-      address: "HKHK HK",
       loading: false,
     };
   },

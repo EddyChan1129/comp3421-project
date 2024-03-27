@@ -66,8 +66,12 @@
                 <input v-model="user.email" type="email" class="form-control" />
               </div>
               <div class="form-group">
-                <label>Age</label>
-                <input v-model="user.age" type="text" class="form-control" />
+                <label>Address</label>
+                <input
+                  v-model="user.address"
+                  type="text"
+                  class="form-control"
+                />
               </div>
               <button @click="updateUser" type="submit" class="btn btn-primary">
                 Update info
@@ -99,7 +103,7 @@ export default {
           process.env.backendURL + "/users/" + this.user._id,
           {
             email: this.user.email,
-            age: this.user.age,
+            address: this.user.address,
           },
           {
             headers: {

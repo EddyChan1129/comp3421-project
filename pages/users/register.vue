@@ -5,7 +5,8 @@
         <div class="row">
           <div class="col-md-8 offset-md-2">
             <div class="alert alert-primary" role="alert">
-              Already have accout? <nuxt-link to="/users/signin">Login</nuxt-link>
+              Already have accout?
+              <nuxt-link to="/users/signin">Login</nuxt-link>
             </div>
           </div>
 
@@ -17,6 +18,10 @@
             <div class="form-group">
               <label>Your mail</label>
               <input v-model="email" type="email" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label>Your address</label>
+              <input v-model="address" type="email" class="form-control" />
             </div>
             <div class="form-group">
               <label>Password</label>
@@ -39,6 +44,7 @@ export default {
       frontendURL: process.env.frontendURL,
       backendURL: process.env.backendURL,
       username: "",
+      address: "",
       email: "",
       password: "",
     };
@@ -54,6 +60,7 @@ export default {
           {
             username: this.email,
             email: this.email,
+            address: this.address,
             password: this.password,
           }
         );
@@ -61,7 +68,7 @@ export default {
       } catch (error) {
         alert("Email already exits.");
         console.log(error);
-      } 
+      }
     },
   },
 };
