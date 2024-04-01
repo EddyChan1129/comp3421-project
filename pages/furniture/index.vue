@@ -36,11 +36,7 @@
                         alt="Thumbnail Image"
                       />
                       <div class="innertext">
-                        <span>{{
-                          furniture.secondHand == true
-                            ? "New Product"
-                            : "Second Hand"
-                        }}</span>
+                        <span>{{ furniture.sale ? "On Sale" : "" }}</span>
                         <h4>${{ furniture.price }}</h4>
                       </div>
                     </div>
@@ -64,7 +60,7 @@
 
                     <div class="lastdate">
                       <div class="row">
-                        <div class="col-md-6">刊登日期:</div>
+                        <div class="col-md-6">Publication Date:</div>
                         <div class="col-md-4 text-right">
                           {{ furniture.date }}
                         </div>
