@@ -14,6 +14,11 @@
     </section>
     <section id="singlecontent">
       <div class="container">
+        <nuxt-link to="/furniture"
+          ><b-button variant="primary" id="test"
+            >LAST PAGE
+          </b-button></nuxt-link
+        >
         <div class="row">
           <div class="col-md-8">
             <h1>
@@ -52,7 +57,9 @@
               <button
                 @click="addToCart(furniture)"
                 class="btn btn-primary btn-lg"
-              >Add to cart</button>
+              >
+                Add to cart
+              </button>
             </div>
           </div>
         </div>

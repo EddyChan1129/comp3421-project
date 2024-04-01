@@ -409,8 +409,13 @@ i.category {
   color: white;
 }
 
-.logo_img{
+.logo_img {
   border-radius: 50%;
+}
+
+#test {
+  width: 200px;
+  margin-bottom: 20px;
 }
 
 @media only screen and (max-width: 768px) {

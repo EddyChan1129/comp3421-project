@@ -40,6 +40,12 @@
                   <b-dropdown-item>
                     <nuxt-link to="/users/my-account">Update my info</nuxt-link>
                   </b-dropdown-item>
+                  <b-dropdown-item>
+                    <nuxt-link to="/users/my-order">My Order</nuxt-link>
+                  </b-dropdown-item>
+                  <b-dropdown-item>
+                    <nuxt-link to="/users/my-feedback">My Feedback</nuxt-link>
+                  </b-dropdown-item>
                 </b-nav-item-dropdown>
                 <b-nav-item v-if="!getUserJwt" class="mt8"
                   ><nuxt-link to="/users/signin"
