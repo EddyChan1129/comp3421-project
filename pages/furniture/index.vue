@@ -46,21 +46,8 @@
                     </div>
                     <div class="lower">
                       <h3>{{ furniture.title }}</h3>
-                      <span
-                        ><svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"
-                          />
-                        </svg>
-                        {{ furniture.selectLocation }}</span
-                      >
+                      <span> {{ furniture.type }}</span>
                     </div>
-
                     <div class="listing-features">
                       <div class="row">
                         <div class="col-md-4">
@@ -110,35 +97,20 @@
                 />
               </div>
               <div class="form-group">
-                <label for="exampleFormControlSelect1"
-                  >Transaction location</label
-                >
+                <label for="exampleFormControlSelect1">Furniture Type</label>
                 <select
-                  v-model="filterData.selectLocation"
+                  v-model="filterData.type"
                   class="form-control"
                   id="exampleFormControlSelect1"
                 >
                   <option value="all">All</option>
-                  <option value="Central_and_Western">
-                    Central and Western
-                  </option>
-                  <option value="Eastern">Eastern</option>
-                  <option value="Southern">Southern</option>
-                  <option value="Wan_Chai">Wan Chai</option>
-                  <option value="Sham_Shui_Po">Sham Shui Po</option>
-                  <option value="Kowloon_City">Kowloon City</option>
-                  <option value="Kwun_Tong">Kwun Tong</option>
-                  <option value="Wong_Tai_Sin">Wong Tai Sin</option>
-                  <option value="Yau_Tsim_Mong">Yau Tsim Mong</option>
-                  <option value="Islands">Islands</option>
-                  <option value="Kwai_Tsing">Kwai Tsing</option>
-                  <option value="North">North</option>
-                  <option value="Sai_Kung">Sai Kung</option>
-                  <option value="Sha_Tin">Sha Tin</option>
-                  <option value="Tai_Po">Tai Po</option>
-                  <option value="Tsuen_Wan">Tsuen Wan</option>
-                  <option value="Tuen_Mun">Tuen Mun</option>
-                  <option value="Yuen_Long">Yuen Long</option>
+                  <option value="Sofa">Sofa</option>
+                  <option value="Table">Table</option>
+                  <option value="Chairs">Chairs</option>
+                  <option value="Bed">Bed</option>
+                  <option value="Bookshelf">Bookshelf</option>
+                  <option value="Wardrobe">Wardrobe</option>
+                  <option value="others">others</option>
                 </select>
               </div>
             </form>
@@ -157,10 +129,10 @@ export default {
       backendURL: process.env.backendURL,
       filterData: {
         title: "",
-        selectLocation: "all",
+        type: "all",
       },
       sort: "priceLow",
-      showing: 2,
+      showing: 4,
       totalFurnitures: "",
     };
   },
@@ -173,7 +145,7 @@ export default {
   computed: {
     filterFurnitures() {
       let filteredFurnitures = this.furnitures.filter((furniture) => {
-        if (this.filterData.selectLocation === "all") {
+        if (this.filterData.type === "all") {
           return furniture.title
             .toLowerCase()
             .includes(this.filterData.title.toLowerCase());
@@ -182,9 +154,9 @@ export default {
             furniture.title
               .toLowerCase()
               .includes(this.filterData.title.toLowerCase()) &&
-            furniture.selectLocation
+            furniture.type
               .toLowerCase()
-              .includes(this.filterData.selectLocation.toLowerCase())
+              .includes(this.filterData.type.toLowerCase())
           );
         }
       });
