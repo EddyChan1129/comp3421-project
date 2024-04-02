@@ -16,8 +16,8 @@
               <div role="tablist">
                 <b-card no-body class="mb-1">
                   <b-card-header header-tag="header" class="p-1" role="tab">
-                    <b-button block v-b-toggle.accordion-1 variant="info"
-                      >Question 1</b-button
+                    <b-button block v-b-toggle.accordion-1 variant="info" class="text-left"
+                      >What payment methods accept?</b-button
                     >
                   </b-card-header>
                   <b-collapse
@@ -28,18 +28,17 @@
                   >
                     <b-card-body>
                       <b-card-text
-                        >I start opened because <code>visible</code> is
-                        <code>true</code></b-card-text
+                        >We accept various payment methods, including credit cards (Visa, Mastercard, American Express), debit cards, and PayPal. You can choose the most convenient option during the checkout process.</b-card-text
                       >
-                      <b-card-text>234</b-card-text>
+                      <!-- <b-card-text>234</b-card-text> -->
                     </b-card-body>
                   </b-collapse>
                 </b-card>
 
                 <b-card no-body class="mb-1">
                   <b-card-header header-tag="header" class="p-1" role="tab">
-                    <b-button block v-b-toggle.accordion-2 variant="info"
-                      >Question 2</b-button
+                    <b-button block v-b-toggle.accordion-2 variant="info" class="text-left"
+                      >Do you offer any warranty on your furniture?</b-button
                     >
                   </b-card-header>
                   <b-collapse
@@ -48,15 +47,15 @@
                     role="tabpanel"
                   >
                     <b-card-body>
-                      <b-card-text>123</b-card-text>
+                      <b-card-text>Yes, we offer a warranty on our furniture. The warranty period may vary depending on the item. Please refer to the product description or contact our customer support for specific warranty details.</b-card-text>
                     </b-card-body>
                   </b-collapse>
                 </b-card>
 
                 <b-card no-body class="mb-1">
                   <b-card-header header-tag="header" class="p-1" role="tab">
-                    <b-button block v-b-toggle.accordion-3 variant="info"
-                      >Question 3</b-button
+                    <b-button block v-b-toggle.accordion-3 variant="info" class="text-left"
+                      >Can I cancel my order?</b-button
                     >
                   </b-card-header>
                   <b-collapse
@@ -65,7 +64,7 @@
                     role="tabpanel"
                   >
                     <b-card-body>
-                      <b-card-text>123</b-card-text>
+                      <b-card-text>If you wish to cancel your order, please contact our customer support as soon as possible. We will assist you in canceling the order if it has not been shipped yet. However, if the order has already been shipped, you may need to follow our return policy for a refund.</b-card-text>
                     </b-card-body>
                   </b-collapse>
                 </b-card>
