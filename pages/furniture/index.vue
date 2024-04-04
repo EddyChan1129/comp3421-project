@@ -101,6 +101,18 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: "Search Furniture",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "Search and discover all types of furniture including sofas, tables, chairs, beds and more on Home Furnishings to find the perfect piece of furniture for your home.",
+        },
+      ],
+    };
+  },
   data() {
     return {
       frontendURL: process.env.frontendURL,

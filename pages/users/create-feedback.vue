@@ -80,6 +80,18 @@
 <script>
 export default {
   middleware: "auth",
+  head() {
+    return {
+      title: "Create feedback",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "Users can create new feedback in the dashboard to share your experience and help us improve our services.",
+        },
+      ],
+    };
+  },
   data() {
     return {
       frontendURL: process.env.frontendURL,

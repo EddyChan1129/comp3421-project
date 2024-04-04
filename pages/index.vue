@@ -76,7 +76,7 @@ export default {
         {
           hid: "description",
           name: "description",
-          content: "My custom description"
+          content: "Discover Furniture Dragon - your ultimate destination for finding your ideal furniture. From classic to contemporary designs, discover high-quality furniture options that 100% match your taste."
         }
       ]
     };

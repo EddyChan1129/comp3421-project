@@ -9,7 +9,7 @@
 
           <div class="col-md-8 offset-md-2">
             <div class="alert alert-primary" role="alert">
-             Please type your email
+              Please type your email
             </div>
             <div class="form-group">
               <label>Your email</label>
@@ -23,3 +23,21 @@
     </section>
   </div>
 </template>
+
+<script>
+export default {
+  head() {
+    return {
+      title: "Forgot Password - Account Recovery",
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: "description",
+          name: "description",
+          content: "If you forget your password, you can reset it by entering your email here.",
+        },
+      ],
+    };
+  },
+};
+</script>

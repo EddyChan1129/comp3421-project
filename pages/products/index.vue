@@ -1,49 +1,61 @@
 <template>
-    <div>
+  <div>
 
-        <cart />
-        <div v-for='(product, idx) in filteredproducts' :key='idx'>
+    <cart />
+    <div v-for='(product, idx) in filteredproducts' :key='idx'>
 
-            {{ product.title }}<br>
-            Price: {{ product.price }}<br>
-            <button @click="addToCart(product)">Add to Cart</button>
-          
-            <br><br>
+      {{ product.title }}<br>
+      Price: {{ product.price }}<br>
+      <button @click="addToCart(product)">Add to Cart</button>
 
-        </div>
+      <br><br>
 
     </div>
+
+  </div>
 </template>
 
-<script>  
+<script>
 import { mapMutations } from 'vuex'
 import cart from '~/components/cart.vue'
 
-export default {  
-  data(){
-    return{
-      backendurl : process.env.backendURL,
-      frontendurl : process.env.frontendURL,
-			
+export default {
+  head() {
+    return {
+      title: "Product List - Online Store",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "Browse our product listings and add your favorite items to your cart.",
+        },
+      ],
+    };
+  },
+  data() {
+    return {
+      backendurl: process.env.backendURL,
+      frontendurl: process.env.frontendURL,
+
     }
   },
   async asyncData({ $axios, store }) {
-    const products = await $axios.$get(process.env.backendURL+'/products')
+    const products = await $axios.$get(process.env.backendURL + '/products')
     return { products }
   },
   components: {
     cart
   },
-  methods:{
+  methods: {
     ...mapMutations({
       addToCart: 'cart/add',
       removeFromCart: 'cart/remove'
     }),
   },
-  computed:{
-    filteredproducts(){
+  computed: {
+    filteredproducts() {
       return this.products.map(({ id, title, price }) => ({ id, title, price }))
     }
   }
 }
-</script> 
+</script>

@@ -39,6 +39,18 @@
 <script>
 import { mapMutations } from "vuex";
 export default {
+  head() {
+    return {
+      title: "Account registration",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "Create your account to join our community. Please fill in your email, address and set password to complete registration.",
+        },
+      ],
+    };
+  },
   data() {
     return {
       frontendURL: process.env.frontendURL,

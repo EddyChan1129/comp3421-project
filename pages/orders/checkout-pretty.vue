@@ -68,6 +68,18 @@ import { mapMutations } from "vuex";
 
 export default {
   middleware: "auth",
+  head() {
+    return {
+      title: "Order Details - My Mall",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "View and pay for your order, including product name, quantity, price, and payment information.",
+        },
+      ],
+    };
+  },
   async asyncData({ $axios, store, params }) {
     const user = await $axios.$get(process.env.backendURL + "/users/me", {
       headers: {

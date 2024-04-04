@@ -87,7 +87,7 @@ export default {
         {
           hid: "description",
           name: "description",
-          content: "My custom description",
+          content: "Browse our Frequently Asked Questions (FAQ) for details on payment methods, furniture warranty policies, and how to cancel your order. Furniture Dragon is committed to providing the best customer service.",
         },
       ],
     };

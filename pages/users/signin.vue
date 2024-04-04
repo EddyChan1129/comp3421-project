@@ -38,6 +38,18 @@
 <script>
 import { mapMutations } from "vuex";
 export default {
+  head() {
+    return {
+      title: "User login",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "Log in to access your account and the personalized services we offer. If you don't have an account yet, please sign up to get started.。",
+        },
+      ],
+    };
+  },
   data() {
     return {
       frontendURL: process.env.frontendURL,

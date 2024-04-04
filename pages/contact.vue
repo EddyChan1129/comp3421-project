@@ -80,7 +80,7 @@ export default {
         {
           hid: "description",
           name: "description",
-          content: "My custom description",
+          content: "Feel free to contact us with your questions, we offer phone and email support to help you. Please contact us via the information provided or inquiry form.",
         },
       ],
     };

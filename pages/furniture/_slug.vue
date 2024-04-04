@@ -73,6 +73,18 @@ import { mapMutations } from "vuex";
 import cart from "~/components/cart.vue";
 
 export default {
+  head() {
+    return {
+      title: "Details of exquisite furniture - Home World",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "Discover our exquisite furniture to add a touch of elegance and comfort to your home space. Buy now and enjoy a unique home living experience.",
+        },
+      ],
+    };
+  },
   data() {
     return {
       frontendURL: process.env.frontendURL,

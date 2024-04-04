@@ -26,3 +26,21 @@
     </section>
   </div>
 </template>
+
+<script>
+export default {
+  head() {
+    return {
+      title: "Reset Password",
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: "description",
+          name: "description",
+          content: "Follow the steps to reset your password to keep your account secure. Please enter the new password and confirm to complete the password update.",
+        },
+      ],
+    };
+  },
+};
+</script>
