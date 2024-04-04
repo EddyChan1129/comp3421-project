@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click="emptyList">Empty Shopping Cart</button>
+    <button class="btn_div" @click="emptyList">Empty Shopping Cart</button>
     <div v-if="price > 0">
       <table>
         <thead>
@@ -17,14 +17,14 @@
             <td>{{ item.price }}</td>
             <td>{{ item.quantity }}</td>
             <td>
-              <a @click="addToCart(item)">+</a>
-              <a @click="removeFromCart(item)">-</a>
+              <a class="add" @click="addToCart(item)">+</a>
+              <a class="min" @click="removeFromCart(item)">-</a>
             </td>
           </tr>
         </tbody>
       </table>
 
-      <button @click="goToCheckout">
+      <button class="btn_div2" @click="goToCheckout">
         Process to checkout ({{ price }}USD)
       </button>
     </div>

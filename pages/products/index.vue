@@ -45,6 +45,5 @@ export default {
       return this.products.map(({ id, title, price }) => ({ id, title, price }))
     }
   }
-   
 }
 </script> 

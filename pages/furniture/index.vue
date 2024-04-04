@@ -22,21 +22,16 @@
               </select>
             </div>
             <div class="row">
-              <div
-                v-for="(furniture, idx) in filterFurnitures"
-                :key="idx"
-                class="col-md-6 text-left"
-              >
+              <div v-for="(furniture, idx) in filterFurnitures" :key="idx" class="col-md-6 text-left">
                 <div class="outer">
                   <nuxt-link :to="'/furniture/' + furniture.slug">
                     <div class="upper">
-                      <img
-                        v-if="furniture.thumbnail"
-                        :src="backendURL + furniture.thumbnail.url"
-                        alt="Thumbnail Image"
-                      />
+                      <img v-if="furniture.thumbnail" :src="backendURL + furniture.thumbnail.url"
+                        alt="Thumbnail Image" />
                       <div class="innertext">
-                        <span>{{ furniture.sale ? "On Sale" : "" }}</span>
+                        <span v-if="furniture.sale">
+                          On Sale
+                        </span>
                         <h4>${{ furniture.price }}</h4>
                       </div>
                     </div>
@@ -71,11 +66,7 @@
               </div>
             </div>
             <!-- end row -->
-            <button
-              @click="showmore"
-              class="btn btn-primary btn-lg"
-              v-if="totalFurnitures > showing"
-            >
+            <button @click="showmore" class="btn btn-primary btn-lg" v-if="totalFurnitures > showing">
               Show more
             </button>
           </div>
@@ -84,21 +75,12 @@
             <form>
               <div class="form-group">
                 <label for="exampleFormControlInput1">Product Name</label>
-                <input
-                  v-model="filterData.title"
-                  type="text"
-                  class="form-control"
-                  id="exampleFormControlInput1"
-                  placeholder="e.g: chair"
-                />
+                <input v-model="filterData.title" type="text" class="form-control" id="exampleFormControlInput1"
+                  placeholder="e.g: chair" />
               </div>
               <div class="form-group">
                 <label for="exampleFormControlSelect1">Furniture Type</label>
-                <select
-                  v-model="filterData.type"
-                  class="form-control"
-                  id="exampleFormControlSelect1"
-                >
+                <select v-model="filterData.type" class="form-control" id="exampleFormControlSelect1">
                   <option value="all">All</option>
                   <option value="Sofa">Sofa</option>
                   <option value="Table">Table</option>
