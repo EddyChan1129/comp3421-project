@@ -36,3 +36,21 @@
     </footer>
   </div>
 </template>
+
+<script>
+export default {
+  head() {
+    return {
+      title: "Welcome to our website",
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: "description",
+          name: "description",
+          content: "Thank you for visiting our website. If you have any questions or feedback, please do not hesitate to contact us via the contact details provided at the bottom.",
+        },
+      ],
+    };
+  },
+};
+</script>

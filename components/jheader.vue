@@ -93,6 +93,18 @@
 <script>
 import { mapMutations } from "vuex";
 export default {
+  head() {
+    return {
+      title: "Official website",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "Welcome to our official website. Explore our product catalog, read user feedback, get help or contact us.",
+        },
+      ],
+    };
+  },
   computed: {
     getUserJwt() {
       return this.$store.getters["auth/getUserJwt"];

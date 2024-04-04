@@ -36,6 +36,18 @@
 import { mapMutations } from "vuex";
 
 export default {
+  head() {
+    return {
+      title: "Shopping cart",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "View your shopping cart and modify item quantities. When you're ready, head to checkout to complete your purchase.",
+        },
+      ],
+    };
+  },
   methods: {
     ...mapMutations({
       addToCart: "cart/add",
