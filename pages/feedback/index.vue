@@ -13,14 +13,29 @@
         <div class="row articles">
           <div class="col-md-12 text-center">
             <div class="row">
-              <div v-for="(blog, idx) in paginatedBlogs" :key="idx" class="col-md-4 text-left">
+              <div
+                v-for="(blog, idx) in paginatedBlogs"
+                :key="idx"
+                class="col-md-4 text-left"
+              >
                 <div class="outer">
                   <div class="upper">
-                    <img v-if="blog.thumbnail" :src="backendURL + blog.thumbnail.url" alt="Thumbnail Image" />
+                    <img
+                      v-if="blog.thumbnail"
+                      :src="backendURL + blog.thumbnail.url"
+                      alt="Thumbnail Image"
+                    />
                   </div>
                   <div class="lower">
-                    <h3>{{ blog.title }}</h3>
-                    <span>{{ blog.date }}</span>
+                    <b
+                      ><span id="feedback_date">
+                        date: {{ blog.date }}
+                      </span></b
+                    >
+                    <h3>
+                      {{ blog.title }}
+                    </h3>
+                    <span>{{ blog.content }}</span>
                   </div>
                 </div>
               </div>
@@ -32,8 +47,12 @@
                 <li v-if="currentPage > 1" class="page-item">
                   <a class="page-link" @click="previousPage">Previous</a>
                 </li>
-                <li v-for="page in totalPageCount" :key="page" :class="{ active: page === currentPage }"
-                  class="page-item">
+                <li
+                  v-for="page in totalPageCount"
+                  :key="page"
+                  :class="{ active: page === currentPage }"
+                  class="page-item"
+                >
                   <a class="page-link" @click="goToPage(page)">{{ page }}</a>
                 </li>
                 <li v-if="currentPage < totalPageCount" class="page-item">
@@ -56,7 +75,8 @@ export default {
         {
           hid: "description",
           name: "description",
-          content: "Read feedback from our customers to find out what they really have to say about our products and services. Your satisfaction is our unremitting goal.",
+          content:
+            "Read feedback from our customers to find out what they really have to say about our products and services. Your satisfaction is our unremitting goal.",
         },
       ],
     };

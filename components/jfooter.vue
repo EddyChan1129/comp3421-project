@@ -4,7 +4,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4 text-left">
-            <img src="/pictures/logo.webp" width="85" class="logo_img"/>
+            <img src="/pictures/logo.webp" width="85" class="logo_img" />
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque
               saepe, odit et qui iste laborum repellendus distinctio doloribus.
@@ -14,21 +14,25 @@
           </div>
           <div class="col-md-4 text-left">
             <h4>Links</h4>
+
             <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="all.html">Search</a></li>
-              <li><a href="blog.html">Blog</a></li>
+              <li><nuxt-link to="/">Home</nuxt-link></li>
+              <li><nuxt-link to="/furniture">Furnitures</nuxt-link></li>
+              <li><nuxt-link to="/feedback">Feedback</nuxt-link></li>
             </ul>
             <ul>
-              <li><a href="faq.html">FAQ</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
+              <li><nuxt-link to="/faq">FAQ</nuxt-link></li>
+              <li><nuxt-link to="/contact">Contact Us</nuxt-link></li>
             </ul>
           </div>
           <div class="col-md-4 text-left">
             <h4>Contact Us</h4>
             <p>
               Phone: (852) 9716-6524<br />
-              E-Mail: <a href="mailto:22026266d@connect.polyu.hk">22026266d@connect.polyu.hk</a>
+              E-Mail:
+              <a href="mailto:22026266d@connect.polyu.hk"
+                >22026266d@connect.polyu.hk</a
+              >
             </p>
           </div>
         </div>
@@ -47,7 +51,8 @@ export default {
         {
           hid: "description",
           name: "description",
-          content: "Thank you for visiting our website. If you have any questions or feedback, please do not hesitate to contact us via the contact details provided at the bottom.",
+          content:
+            "Thank you for visiting our website. If you have any questions or feedback, please do not hesitate to contact us via the contact details provided at the bottom.",
         },
       ],
     };
