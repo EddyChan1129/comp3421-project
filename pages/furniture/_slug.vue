@@ -24,7 +24,7 @@
             <h1>
               {{ furniture.title }}
               <span class="thetag">{{
-                furniture.secondHand ? "New Product" : "Second Hand"
+                furniture.sale ? "On Sale" : ""
               }}</span>
             </h1>
             <h5>${{ furniture.price }}</h5>

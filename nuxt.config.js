@@ -57,7 +57,7 @@ export default {
     extend(config, ctx) {},
   },
   env: {
-    backendURL: "http://139.180.132.232:1337",
+    backendURL: "https://file.fssphk.com",
     frontendURL: "http://localhost:3000",
   },
 };
