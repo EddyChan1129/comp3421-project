@@ -24,31 +24,31 @@
             <div class="row">
               <div v-for="(furniture, idx) in filterFurnitures" :key="idx" class="col-md-6 text-left">
                 <div class="outer">
-                  <nuxt-link :to="'/furniture/' + furniture.slug">
+                  <nuxt-link to="#">
                     <div class="upper">
-                      <img v-if="furniture.thumbnail" :src="backendURL + furniture.thumbnail.url"
+                      <img v-if="furniture.thumbnail"<!--  :src="backendURL + furniture.thumbnail.url" -->
                         alt="Thumbnail Image" />
                       <div class="innertext">
                         <span v-if="furniture.sale">
                           On Sale
                         </span>
-                        <h4>${{ furniture.price }}</h4>
+                        <h4>${{ /* furniture.price */ }}</h4>
                       </div>
                     </div>
                     <div class="lower">
-                      <h3>{{ furniture.title }}</h3>
-                      <span> {{ furniture.type }}</span>
+                      <h3>{{ /* furniture.title */ }}</h3>
+                      <span> {{/*  furniture.type  */}}</span>
                     </div>
                     <div class="listing-features">
                       <div class="row">
                         <div class="col-md-4">
-                          <strong>Long</strong><br />{{ furniture.long }}m
+                          <strong>Long</strong><br />{{ /* furniture.long */ }}
                         </div>
                         <div class="col-md-4">
-                          <strong>Wide</strong><br />{{ furniture.wide }}m
+                          <strong>Wide</strong><br />{{/*  furniture.wide */ }}
                         </div>
                         <div class="col-md-4">
-                          <strong>Height</strong><br />{{ furniture.height }}m
+                          <strong>Height</strong><br />{{ /* furniture.height */ }}
                         </div>
                       </div>
                     </div>
@@ -57,7 +57,7 @@
                       <div class="row">
                         <div class="col-md-6">Publication Date:</div>
                         <div class="col-md-4 text-right">
-                          {{ furniture.date }}
+                          {{ /* furniture.date  */}}
                         </div>
                       </div>
                     </div>
@@ -128,13 +128,14 @@ export default {
   },
   async asyncData({ $axios }) {
     const furnitures = await $axios.$get(
-      process.env.backendURL + "/furnitures"
+      process.env.backendURL
     );
+    console.log(furnitures)
     return { furnitures };
   },
   computed: {
     filterFurnitures() {
-      let filteredFurnitures = this.furnitures.filter((furniture) => {
+      /* let filteredFurnitures = this.furnitures.filter((furniture) => {
         if (this.filterData.type === "all") {
           return furniture.title
             .toLowerCase()
@@ -173,7 +174,7 @@ export default {
       }
       this.totalFurnitures = this.furnitures.length;
 
-      return filteredFurnitures.slice(0, this.showing);
+      return filteredFurnitures.slice(0, this.showing); */
     },
   },
   methods: {

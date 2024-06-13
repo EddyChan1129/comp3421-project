@@ -57,7 +57,7 @@ export default {
     extend(config, ctx) {},
   },
   env: {
-    backendURL: "https://file.fssphk.com",
+    backendURL: "https://api.github.com/repos/EddyChan1129/testing/contents/image",
     frontendURL: "http://localhost:3000",
   },
 };
