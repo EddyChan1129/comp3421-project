@@ -23,21 +23,22 @@
             </div>
             <div class="row">
               <div v-for="(furniture, idx) in filterFurnitures" :key="idx" class="col-md-6 text-left">
+                <p>hi</p>
                 <div class="outer">
                   <nuxt-link to="#">
                     <div class="upper">
-                      <img v-if="furniture.thumbnail"<!--  :src="backendURL + furniture.thumbnail.url" -->
-                        alt="Thumbnail Image" />
+                      <img v-if="furniture.img_url"  :src="furniture.img_url" 
+                      alt="Thumbnail Image" />
                       <div class="innertext">
                         <span v-if="furniture.sale">
                           On Sale
                         </span>
-                        <h4>${{ /* furniture.price */ }}</h4>
+                        <h4>${{  furniture.price  }}</h4>
                       </div>
                     </div>
                     <div class="lower">
                       <h3>{{ /* furniture.title */ }}</h3>
-                      <span> {{/*  furniture.type  */}}</span>
+                      <span> {{/* furniture.type */ }}</span>
                     </div>
                     <div class="listing-features">
                       <div class="row">
@@ -45,7 +46,7 @@
                           <strong>Long</strong><br />{{ /* furniture.long */ }}
                         </div>
                         <div class="col-md-4">
-                          <strong>Wide</strong><br />{{/*  furniture.wide */ }}
+                          <strong>Wide</strong><br />{{/* furniture.wide */ }}
                         </div>
                         <div class="col-md-4">
                           <strong>Height</strong><br />{{ /* furniture.height */ }}
@@ -57,7 +58,7 @@
                       <div class="row">
                         <div class="col-md-6">Publication Date:</div>
                         <div class="col-md-4 text-right">
-                          {{ /* furniture.date  */}}
+                          {{ /* furniture.date */ }}
                         </div>
                       </div>
                     </div>
@@ -135,23 +136,18 @@ export default {
   },
   computed: {
     filterFurnitures() {
-      /* let filteredFurnitures = this.furnitures.filter((furniture) => {
-        if (this.filterData.type === "all") {
-          return furniture.title
-            .toLowerCase()
-            .includes(this.filterData.title.toLowerCase());
-        } else {
-          return (
-            furniture.title
-              .toLowerCase()
-              .includes(this.filterData.title.toLowerCase()) &&
-            furniture.type
-              .toLowerCase()
-              .includes(this.filterData.type.toLowerCase())
-          );
-        }
+      let furnituresArray = Object.values(this.furnitures);
+
+      let filteredFurnitures = furnituresArray.filter((furniture) => {
+        return true;
       });
-      if (this.sort === "priceLow") {
+
+      
+
+      console.log(filteredFurnitures);
+      return filteredFurnitures;
+
+      /* if (this.sort === "priceLow") {
         filteredFurnitures.sort((a, b) => {
           return a.price - b.price;
         });
@@ -174,7 +170,7 @@ export default {
       }
       this.totalFurnitures = this.furnitures.length;
 
-      return filteredFurnitures.slice(0, this.showing); */
+      return filteredFurnitures.slice(0, this.showing);  */
     },
   },
   methods: {
