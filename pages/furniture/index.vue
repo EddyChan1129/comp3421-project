@@ -4,61 +4,44 @@
       <div class="container">
         <div class="row thehead">
           <div class="col-md-8 text-left">
-            <h3>Searh furniture</h3>
-          </div>
-          <div class="col-md-4 text-right">
-            <p><a href="#">Home</a> > <a href="#">Search</a></p>
+            <h3>SEARCH</h3>
           </div>
         </div>
         <div class="row searchproperties">
           <div class="col-md-8 text-center">
-            <div class="row sortingwrapper">
-              <select v-model="sort" class="form-control" id="sorting">
-                <option value="priceLow">Sort by</option>
-                <option value="priceLow">Price (low to height)</option>
-                <option value="priceHeight">Price (height to low)</option>
-                <option value="dateCurrect">Date (From currect to last)</option>
-                <option value="dateLast">Date (From last to current)</option>
-              </select>
-            </div>
             <div class="row">
               <div v-for="(furniture, idx) in filterFurnitures" :key="idx" class="col-md-6 text-left">
-                <p>hi</p>
                 <div class="outer">
                   <nuxt-link to="#">
                     <div class="upper">
-                      <img v-if="furniture.img_url"  :src="furniture.img_url" 
-                      alt="Thumbnail Image" />
-                      <div class="innertext">
-                        <span v-if="furniture.sale">
-                          On Sale
-                        </span>
-                        <h4>${{  furniture.price  }}</h4>
+                      <div class="image-block">
+                        <img v-if="furniture.img_url" :src="furniture.img_url" alt="Image" />
                       </div>
-                    </div>
-                    <div class="lower">
-                      <h3>{{ /* furniture.title */ }}</h3>
-                      <span> {{/* furniture.type */ }}</span>
+                      <div class="innertext">
+                        <span v-if="furniture.name">
+                          {{ furniture.name }}
+                        </span>
+                      </div>
                     </div>
                     <div class="listing-features">
                       <div class="row">
                         <div class="col-md-4">
-                          <strong>Long</strong><br />{{ /* furniture.long */ }}
+                          <strong>Long</strong><br />{{ furniture.width }}
                         </div>
                         <div class="col-md-4">
-                          <strong>Wide</strong><br />{{/* furniture.wide */ }}
+                          <strong>Wide</strong><br />{{ furniture.length }}
                         </div>
                         <div class="col-md-4">
-                          <strong>Height</strong><br />{{ /* furniture.height */ }}
+                          <strong>Height</strong><br />{{ furniture.height }}
                         </div>
                       </div>
                     </div>
 
                     <div class="lastdate">
                       <div class="row">
-                        <div class="col-md-6">Publication Date:</div>
+                        <div class="col-md-6"> Price</div>
                         <div class="col-md-4 text-right">
-                          {{ /* furniture.date */ }}
+                         $ {{ furniture.price }}
                         </div>
                       </div>
                     </div>
@@ -71,8 +54,7 @@
               Show more
             </button>
           </div>
-          <div class="col-md-4">
-            <h3 class="font24">Search by</h3>
+          <div class="testing">
             <form>
               <div class="form-group">
                 <label for="exampleFormControlInput1">Product Name</label>
@@ -92,8 +74,20 @@
                   <option value="others">others</option>
                 </select>
               </div>
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Sort by</label>
+                <select v-model="sort" class="form-control" id="exampleFormControlSelect1">
+                  <option value="priceLow">Price (low to height)</option>
+                  <option value="priceHeight">Price (height to low)</option>
+                  <option value="dateCurrect">Date (From currect to last)</option>
+                  <option value="dateLast">Date (From last to current)</option>
+                </select>
+              </div>
             </form>
           </div>
+
+
+
         </div>
       </div>
     </section>
@@ -129,7 +123,7 @@ export default {
   },
   async asyncData({ $axios }) {
     const furnitures = await $axios.$get(
-      process.env.backendURL
+      "https://raw.githubusercontent.com/EddyChan1129/testing/main/sample.json"
     );
     console.log(furnitures)
     return { furnitures };
@@ -142,12 +136,9 @@ export default {
         return true;
       });
 
-      
-
       console.log(filteredFurnitures);
-      return filteredFurnitures;
 
-      /* if (this.sort === "priceLow") {
+      if (this.sort === "priceLow") {
         filteredFurnitures.sort((a, b) => {
           return a.price - b.price;
         });
@@ -168,9 +159,9 @@ export default {
           return b.price - a.price;
         });
       }
-      this.totalFurnitures = this.furnitures.length;
+      this.totalFurnitures = furnituresArray.length;
 
-      return filteredFurnitures.slice(0, this.showing);  */
+      return filteredFurnitures.slice(0, this.showing);
     },
   },
   methods: {
